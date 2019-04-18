@@ -3,8 +3,8 @@ use_frameworks!
 
 def commonDependencies
     pod 'RxGesture', :path => '../'
-    pod 'RxSwift', '~> 4.3'
-    pod 'RxSwift', '~> 4.3'
+    pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+    pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift'
 end
 
 target 'RxGesture_iOS_Demo' do
