@@ -17,7 +17,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import AppKit
 import RxSwift
 import RxCocoa
@@ -48,7 +48,7 @@ extension Reactive where Base: View {
     }
 }
 
-extension ObservableType where E: NSRotationGestureRecognizer {
+extension ObservableType where Element: NSRotationGestureRecognizer {
 
     /**
      Maps the observable `GestureRecognizer` events sequence to an observable sequence of rotation values of the gesture in radians.
@@ -59,3 +59,4 @@ extension ObservableType where E: NSRotationGestureRecognizer {
         }
     }
 }
+#endif

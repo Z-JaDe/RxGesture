@@ -17,7 +17,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import AppKit
 import RxSwift
 import RxCocoa
@@ -48,7 +48,7 @@ extension Reactive where Base: View {
     }
 }
 
-extension ObservableType where E: NSPanGestureRecognizer {
+extension ObservableType where Element: NSPanGestureRecognizer {
 
     /**
      Maps the observable `GestureRecognizer` events sequence to an observable sequence of translation values of the pan gesture in the coordinate system of the specified `view` alongside the gesture velocity.
@@ -65,3 +65,4 @@ extension ObservableType where E: NSPanGestureRecognizer {
         }
     }
 }
+#endif
